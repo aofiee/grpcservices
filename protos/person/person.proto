@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package person;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/aofiee/grpcservices/protos/person";
+
+service Person {
+    rpc Person (GetPersonFromIDRequest) returns (PersonResponse){
+        option (google.api.http) = {
+            get: "/api/v1/person/{ID}"
+        };  
+    }
+
+    rpc AllPerson (GetALLPersonsRequest) returns (AllPersonResponse){
+        option (google.api.http) = {
+            get: "/api/v1/all/person"
+        };  
+    };
+}
+
+message GetPersonFromIDRequest {
+    string ID = 1;
+}
+
+message GetALLPersonsRequest {
+
+}
+
+message PersonResponse {
+    string ID = 1;
+    string FullName = 2;
+    int32 Age = 3;
+    string Email = 4;
+    string Address = 5;
+}
+
+message AllPersonResponse {
+    repeated PersonResponse Persons = 1;
+}

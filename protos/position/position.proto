@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package position;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/aofiee/grpcservices/protos/position";
+
+service Position {
+    rpc Position (UserPositionFromUUIDRequest) returns (PositionResponse){
+        option (google.api.http) = {
+            get: "/api/v1/position/{UUID}"
+        }; 
+    }
+    rpc AllPosition (AllPositionsRequest) returns (AllPositionsResponse){
+        option (google.api.http) = {
+            get: "/api/v1/all/position"
+        }; 
+    }
+}
+
+message UserPositionFromUUIDRequest {
+    string UUID = 1;
+}
+
+message PositionResponse {
+    string FullName = 1;
+    string Email = 2;
+    string Position = 3;
+    string JobDesc = 4;
+}
+
+message AllPositionsRequest {
+
+}
+
+message AllPositionsResponse {
+    repeated PositionResponse Positions = 1;
+}
