@@ -1,5 +1,7 @@
 ## GRPC
 
+ืทำสอบ gRPC ไม่ได้ celan code นะจ้ะ
+
 ### Install compiler Protobuf
 
 ```bash
@@ -8,15 +10,6 @@ $ protoc --version
 
 libprotoc 3.14.0
 $ brew install protoc-gen-go
-```
-
-### make protos/manga directory
-
-```bash
-$ mkdir protos
-$ cd protos
-$ mkdir manga
-$ touch manga.proto
 ```
 
 ### Generate code by protoc & protoc-gen-go in protos directory
