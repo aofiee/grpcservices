@@ -1,6 +1,4 @@
-## GRPC
-
-ืทำสอบ gRPC ไม่ได้ celan code นะจ้ะ
+## ทดสอบ gRPC ไม่ได้ clean code นะจ้ะ
 
 ### Install compiler Protobuf
 
